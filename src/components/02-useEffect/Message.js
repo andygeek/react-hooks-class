@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Message = () => {
+
+  const [coors, setCoors] = useState({x: 0, y: 0})
+  const { x, y } = coors;
+
   const mouseMove = (e) => {
-    const coors = { x: e.x, y: e.y };
-    console.log(coors);
+    const cordenadas = { x: e.x, y: e.y };
+    setCoors(cordenadas);
   };
 
   useEffect(() => {
@@ -16,6 +20,7 @@ export const Message = () => {
   return (
     <div>
       <h3>Soy genial</h3>
+      <p>x: {x}, y: {y}</p>
     </div>
   );
 };
