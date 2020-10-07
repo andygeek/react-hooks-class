@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import { HookApp } from "./HookApp";
 
 ReactDOM.render(
   <>
-    <h1>Hola mundo</h1>
+    <HookApp />
   </>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
