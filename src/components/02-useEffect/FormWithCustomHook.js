@@ -6,17 +6,23 @@ export const FormWithCustomHook = () => {
   const [formValues, handlerInputChange] = useForm({
     name: "",
     email: "",
-    password: ""
+    password: "",
   });
 
   const { name, email, password } = formValues;
 
   useEffect(() => {
     console.log("El email cambio");
-  }, [email])
+  }, [email]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formValues);
+  }
+
 
   return (
-    <>
+    <form onSubmit={ handleSubmit }>
       <h1>FormWithCustomHook</h1>
       <hr />
       <div className="form-group">
@@ -53,6 +59,7 @@ export const FormWithCustomHook = () => {
           onChange={handlerInputChange}
         />
       </div>
-    </>
+      <button type="submit" className="btn btn-primary">Save</button>
+    </form>
   );
 };
