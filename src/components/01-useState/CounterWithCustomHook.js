@@ -9,11 +9,11 @@ export const CounterWithCustomHook = () => {
       <h1>Counter With Hook: {state}</h1>
       <hr />
 
-      <button onClick={increment} className="btn">
-        + 1
+      <button onClick={()=> increment(5)} className="btn">
+        + 5
       </button>
-      <button onClick={decrement} className="btn">
-        - 1
+      <button onClick={()=> decrement(2)} className="btn">
+        - 2
       </button>
     </>
   );
