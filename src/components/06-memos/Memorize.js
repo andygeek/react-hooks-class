@@ -31,7 +31,4 @@ export const Memorize = () => {
   );
 };
 
-/* Si hacemos click en el boton Show/Hide volverá a aparecer el emnsaje del componente Small
-*  Esto es porque react nota un cambio en el state y vuelve a dibujar nuestro componente
-*  lo que llama al mensaje. Esto puede ser un problema en una aplicacion grande 
-*/
+/* Todo esto se soluciono con Memo en el componente Small */

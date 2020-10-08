@@ -1,12 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 
-export const Small = ({value}) => {
+export const Small = memo(({ value }) => {
+  console.log("Me volvi a llamar :d");
 
-  console.log('Me volvi a llamar :d');
-
-  return(
-    <small>
-      {value}
-    </small>
+  return (
+    <small>{value}</small>
   );
-};
+});
