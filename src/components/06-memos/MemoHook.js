@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useCounter } from "../../hooks/useCounter";
 
 import "./style.css";
@@ -14,6 +14,8 @@ export const MemoHook = () => {
     return `${iteraciones} iteraciones realizadas`
   }
 
+  const memoProcesoPesado = useMemo(() => procesoPesado(state), [state])
+
   return (
     <div>
       <h1>MemoHook</h1>  
@@ -22,7 +24,7 @@ export const MemoHook = () => {
       </h3>
       <hr />
 
-      <p>{procesoPesado(state)}</p>
+      <p>{memoProcesoPesado}</p>
 
       <button
         className="btn btn-primary"
@@ -45,4 +47,4 @@ export const MemoHook = () => {
   );
 };
 
-// Hay un proceso pesado que es un fastidio en el navegador
+// El proceso pesado ya no es un fastidio en el navegador gracias al useMemo
